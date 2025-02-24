@@ -26,9 +26,10 @@ jobs:
       with:
         only-pr-files: false
     - name: Run Jest Tests
-      run: npm test
+      run: npm test -- --coverage
     - name: Upload Jest Test Reports
       uses: actions/upload-artifact@v4
       with:
         name: jest-test-results
         path: coverage  # Path where Jest stores test reports
+        
